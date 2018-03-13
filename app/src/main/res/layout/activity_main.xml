@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mx.edu.ittepic.a12_marzo.MainActivity">
+
+
+    <EditText
+        android:hint="nombre"
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:hint="celular"
+        android:id="@+id/etCelular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:hint="direccion"
+        android:id="@+id/etDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="fecha del evento"
+        android:id="@+id/etFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="Hora Inicio"
+            android:id="@+id/etHora1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_marginLeft="50dp"
+            android:hint="Hora Final"
+            android:id="@+id/etHora2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="Numero Platillos"
+            android:id="@+id/etPlatillos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_marginLeft="50dp"
+            android:hint="Numero Postres"
+            android:id="@+id/etPostres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mantelería"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/cbBasica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Básica"/>
+        <CheckBox
+            android:id="@+id/cbLujo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="De Lujo"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meseros"/>
+   <SeekBar
+       android:id="@+id/seekbar"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btGuardar"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:text="Guardar"/>
+
+        <Button
+            android:text="Obtener"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/btObtener"
+            android:layout_width="150dp"
+            android:layout_height="100dp" />
+    </LinearLayout>
+
+
+</LinearLayout>
