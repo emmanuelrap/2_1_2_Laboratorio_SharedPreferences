@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         SeekBar sb;
 
 
+
         @Override
         protected void onCreate(Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
@@ -113,6 +114,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
                     /**  Check box */
                     /*
                     if (cb1.isChecked()) {
@@ -178,24 +185,32 @@ public class MainActivity extends AppCompatActivity {
                     et8.setText(preferences8.getString("correo8", ""));
 
 
-
-
                     SharedPreferences preferencesa = getSharedPreferences("manteleria1", Context.MODE_PRIVATE);
-                        cb1.setChecked((preferencesa.getBoolean("cantar", false)));
-
+                    cb1.setChecked((preferencesa.getBoolean("cantar", false)));
 
                     SharedPreferences preferencesb = getSharedPreferences("manteleria2", Context.MODE_PRIVATE);
                     cb2.setChecked((preferencesb.getBoolean("leer", false)));
 
 
-
-
-
-
-
                 }
             });//fin on clic bt2
 
+        sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                final int auxsb =i;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
         }
 }
