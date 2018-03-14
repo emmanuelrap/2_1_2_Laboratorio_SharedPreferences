@@ -17,8 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button bt1,bt2;
         EditText et1,et2,et3,et4,et5,et6,et7,et8;
-        CheckBox cb1,cb2,cb3,cb4,cb5,cb6;
+        CheckBox cb1,cb2;
         SeekBar sb;
+        int auxsb,aux;
 
 
 
@@ -104,55 +105,35 @@ public class MainActivity extends AppCompatActivity {
 
                     SharedPreferences preferencesa = getSharedPreferences("manteleria1", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editora = preferencesa.edit();
-                    editora.putBoolean("cantar",  cb1.isChecked());
+                    editora.putBoolean("normal",  cb1.isChecked());
                     editora.commit();
 
                     SharedPreferences preferencesb = getSharedPreferences("manteleria2", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editorb = preferencesb.edit();
-                    editorb.putBoolean("leer",  cb2.isChecked());
+                    editorb.putBoolean("delujo",  cb2.isChecked());
                     editorb.commit();
 
+                    SharedPreferences preferencesz = getSharedPreferences("progresos", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editorz = preferencesz.edit();
+                    editorz.putInt("progreso",  auxsb);
+                    editorz.commit();
 
 
+                    et1.setText("");
+                    et2.setText("");
+                    et3.setText("");
+                    et4.setText("");
+                    et5.setText("");
+                    et6.setText("");
+                    et7.setText("");
+                    et8.setText("");
+
+                    cb1.setChecked(false);
+                    cb2.setChecked(false);
+
+                    sb.setProgress(0);
 
 
-
-
-
-
-                    /**  Check box */
-                    /*
-                    if (cb1.isChecked()) {
-                        boolean cantar = true;
-                        SharedPreferences preferencesa = getSharedPreferences("manteleria1", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editora = preferencesa.edit();
-                        editora.putBoolean("cantar", cantar);
-                        editora.commit();
-                    }
-
-                    if (cb2.isChecked()) {
-                        boolean leer = true;
-                        SharedPreferences preferencesb = getSharedPreferences("manteleria2", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editorb = preferencesb.edit();
-                        editorb.putBoolean("leer", leer);
-                        editorb.commit();
-                    }*/
-
-
-
-                 /*
-                et1.setText("");
-                et2.setText("");
-
-                cb1.setChecked(false);
-                cb2.setChecked(false);
-                cb3.setChecked(false);
-
-                rb1.setChecked(false);
-                rb2.setChecked(false);
-                rb3.setChecked(false);
-
-                sp.setSelection(0);*/
                 }
             });//fin bt1
 
@@ -186,19 +167,27 @@ public class MainActivity extends AppCompatActivity {
 
 
                     SharedPreferences preferencesa = getSharedPreferences("manteleria1", Context.MODE_PRIVATE);
-                    cb1.setChecked((preferencesa.getBoolean("cantar", false)));
+                    cb1.setChecked((preferencesa.getBoolean("normal", false)));
 
                     SharedPreferences preferencesb = getSharedPreferences("manteleria2", Context.MODE_PRIVATE);
-                    cb2.setChecked((preferencesb.getBoolean("leer", false)));
+                    cb2.setChecked((preferencesb.getBoolean("delujo", false)));
+
+                   SharedPreferences preferencesz = getSharedPreferences("progresos", Context.MODE_PRIVATE);
+                    sb.setProgress(preferencesz.getInt("progreso", 0));
+
 
 
                 }
+
+
             });//fin on clic bt2
+
+
 
         sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                final int auxsb =i;
+                auxsb=i;
             }
 
             @Override

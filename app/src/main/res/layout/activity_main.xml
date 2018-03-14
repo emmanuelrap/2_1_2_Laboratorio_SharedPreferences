@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_margin="20dp"
     tools:context="mx.edu.ittepic.a12_marzo.MainActivity">
 
 
@@ -105,7 +106,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:max="10"
-        android:progress="1" />
+        android:progress="0" />
 
 
     <LinearLayout
